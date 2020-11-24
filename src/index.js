@@ -1,60 +1,53 @@
-console.log("Day 5");
-
-// const getScore = function (score) {
-//   return score + 20;
-// };
-
-const getScore = (score) => score + 20;
-const getScore2 = () => 100;
-const totalScore = (score1, score2) => {
-  if (score1 > 50) {
-    return score2;
-  } else {
-    return score1 + score2;
+class User {
+  constructor(name, age) {
+    this.firstName = name;
+    this.age = age;
   }
-};
 
-console.log(getScore(10));
-console.log(getScore2());
-console.log(totalScore(10, 1000));
+  getName() {
+    return this.firstName;
+  }
 
-function getRepositories() {
-  return fetch("https://api.github.com/users/maniruzzamanakash/repos")
-    .then(function (response) {
-      return response.json();
-    })
-    .catch(function (error) {
-      return error;
-    });
+  getGreeting() {
+    return `Hello ${this.firstName} | Your Age - ${this.age}`;
+  }
 }
 
-const getRepositoriesArrowFunc = () => {
-  return fetch("https://api.github.com/users/maniruzzamanakash/repos")
-    .then((response) => response.json())
-    .catch((error) => error);
-};
-
-console.log(getRepositories());
-console.log(getRepositoriesArrowFunc());
-
-const arrays = [10, 20, 300, 400];
-let newArray = [];
-arrays.forEach(function (item) {
-  if (item > 100) {
-    newArray.push(item);
+class Student extends User {
+  constructor(firstName, age, level) {
+    super(firstName, age);
+    this.level = level;
   }
-});
-console.log(newArray);
 
-const newArrayArrowFunc = arrays.filter((item) => item > 100);
-console.log(newArrayArrowFunc);
+  greetingStudent() {
+    return `Hello Student ${this.firstName} | Your level - ${this.level}`;
+  }
+}
 
-const address = {
-  city: "Dhaka",
-  zip: 1213,
-  details: function () {
-    return `You Live in ${this.city} at zip - ${this.zip}`;
-  },
-};
+const user = new User("Maniruzzaman", 26);
+console.log(user.getName());
+console.log(user.getGreeting());
 
-console.log(address.details());
+const student = new Student("Polash Rana", 25, "Beginner");
+console.log(student.getGreeting());
+console.log(student.greetingStudent());
+
+/** JAVA Practise */
+
+// public class Main                                           // Class in Java
+// {
+//     String name;
+//     int age;
+//     public Main() {}                                        // Constructor in JAVA
+//     public Main(String name, int age) {                     // Constructor in JAVA
+//         this.name = name;
+//         this.age = age;
+//     }
+// 	public void generateName(){                             // Function/Methods in JAVA
+// 	    System.out.println("Welcome Mr. "+this.name);
+// 	}
+// 	public static void main(String[] args) {
+//         Main mainObj = new Main("Maniruzzaman", 26);        // Object Initialization in JAVA
+//         mainObj.generateName();                             // Access Class Methods in JAVA
+// 	}
+// }
