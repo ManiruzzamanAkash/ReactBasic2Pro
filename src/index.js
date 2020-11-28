@@ -1,53 +1,12 @@
-class User {
-  constructor(name, age) {
-    this.firstName = name;
-    this.age = age;
-  }
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import App2 from "./App2";
 
-  getName() {
-    return this.firstName;
-  }
+ReactDOM.render(<App2 />, document.getElementById("root"));
 
-  getGreeting() {
-    return `Hello ${this.firstName} | Your Age - ${this.age}`;
-  }
-}
-
-class Student extends User {
-  constructor(firstName, age, level) {
-    super(firstName, age);
-    this.level = level;
-  }
-
-  greetingStudent() {
-    return `Hello Student ${this.firstName} | Your level - ${this.level}`;
-  }
-}
-
-const user = new User("Maniruzzaman", 26);
-console.log(user.getName());
-console.log(user.getGreeting());
-
-const student = new Student("Polash Rana", 25, "Beginner");
-console.log(student.getGreeting());
-console.log(student.greetingStudent());
-
-/** JAVA Practise */
-
-// public class Main                                           // Class in Java
-// {
-//     String name;
-//     int age;
-//     public Main() {}                                        // Constructor in JAVA
-//     public Main(String name, int age) {                     // Constructor in JAVA
-//         this.name = name;
-//         this.age = age;
-//     }
-// 	public void generateName(){                             // Function/Methods in JAVA
-// 	    System.out.println("Welcome Mr. "+this.name);
-// 	}
-// 	public static void main(String[] args) {
-//         Main mainObj = new Main("Maniruzzaman", 26);        // Object Initialization in JAVA
-//         mainObj.generateName();                             // Access Class Methods in JAVA
-// 	}
-// }
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
