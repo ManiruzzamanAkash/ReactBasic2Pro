@@ -4,7 +4,6 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 
 /** Components */
-import Product from "./components/Product";
 import App from "./App";
 
 ReactDOM.render(<App />, document.getElementById("root"));
