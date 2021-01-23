@@ -12,8 +12,8 @@ const App = () => {
       <p>Ex: Functional Component</p>
       <CounterFunctional />
 
-      <p>Ex: Class Component</p>
-      <CounterClass />
+      {/* <p>Ex: Class Component</p>
+      <CounterClass /> */}
     </>
   )
 }

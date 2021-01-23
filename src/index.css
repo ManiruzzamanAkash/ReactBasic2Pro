@@ -22,3 +22,12 @@ code {
     height: 70px;
     cursor: pointer;
 }
+
+.counter-button-disabled {
+    font-size: 50px;
+    border: 1px solid #eee;
+    padding: 5px;
+    width: 70px;
+    height: 70px;
+    cursor: text;
+}
