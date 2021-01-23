@@ -31,3 +31,26 @@ code {
     height: 70px;
     cursor: text;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+.badge-info {
+    padding: 1px;
+    color: #fff;
+    background-color: #17a2b8;
+}
+
+.badge-success {
+    padding: 1px;
+    color: #fff;
+    background-color: #28a745;
+}

@@ -2,18 +2,15 @@
 import React from "react";
 import CounterClass from "./components/CounterClass";
 import CounterFunctional from "./components/CounterFunctional";
+import TaskList from "./components/TaskList";
 
 const App = () => {
   
   return (
     <>
-      <h2>Counter App</h2>
+      <h2>Task App</h2>
       <hr/>
-      <p>Ex: Functional Component</p>
-      <CounterFunctional />
-
-      {/* <p>Ex: Class Component</p>
-      <CounterClass /> */}
+      <TaskList />
     </>
   )
 }
