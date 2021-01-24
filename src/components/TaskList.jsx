@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import TaskSingle from './TaskSingle';
 
 const TaskList = () => {
@@ -8,7 +8,7 @@ const TaskList = () => {
     //     'Third Task',
     // ]
 
-    const tasks = [
+    const [tasks, setTasks] = useState([
         {
             id: 1,
             title: 'Complete map() of Javascript',
@@ -24,7 +24,7 @@ const TaskList = () => {
             title: 'Final Video Tutorial',
             status: 'pending'
         }
-    ]
+    ])
 
     useEffect(() => {
         for (let index = 0; index < tasks.length; index++) {
@@ -41,6 +41,18 @@ const TaskList = () => {
         });
     }, []);
 
+    const changeTaskStatus = (index) => {
+        // Change Status
+        const updatedTasks = [];
+        tasks.map((task, idx) => {
+            if(idx === index){
+                task.status = task.status === 'pending' ? 'done' : 'pending';
+            }
+            updatedTasks.push(task);
+        });
+        setTasks(updatedTasks);
+    }
+
     return (
         <div>
             {
@@ -56,7 +68,12 @@ const TaskList = () => {
                     <tbody>
                         {
                             tasks.map((task, index) => (
-                                <TaskSingle task={task} index={index} key={index} />
+                                <TaskSingle 
+                                task={task} 
+                                index={index} 
+                                key={index} 
+                                changeTaskStatus={changeTaskStatus}
+                                />
                             ))
                         }
                     </tbody>
