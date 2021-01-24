@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import TaskSingle from './TaskSingle';
 
 const TaskList = () => {
     // const tasks = [
@@ -55,20 +56,7 @@ const TaskList = () => {
                     <tbody>
                         {
                             tasks.map((task, index) => (
-                                <tr key={index}>
-                                    <td>{index + 1}</td>
-                                    <td>{task.title}</td>
-                                    <td>
-                                        {
-                                            task.status === "pending" &&
-                                            <span className="badge-info">Pending</span>
-                                        }
-                                        {
-                                            task.status === "done" &&
-                                            <span className="badge-success">Done</span>
-                                        }
-                                    </td>
-                                </tr>
+                                <TaskSingle task={task} index={index} key={index} />
                             ))
                         }
                     </tbody>
