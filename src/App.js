@@ -44,7 +44,7 @@ const App = () => {
 
   return (
     <>
-      <h2>Tutorial 14.2 - Component Communication</h2>
+      <h2>Tutorial 15 - Component Communication</h2>
       <Test
         name={name}
         myAddress={address}
