@@ -35,6 +35,8 @@ const Day16 = () => {
             {phone} */}
             {/* <Day16Comp address = {address} /> */}
             <Day16Comp address={address} />
+
+            <h2 className="welcome">Day 16</h2>
         </>
      );
 }
