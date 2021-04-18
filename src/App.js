@@ -1,12 +1,14 @@
 
 import React from "react";
+import { Container } from 'react-bootstrap';
+import ContactContainer from "./views/ContactContainer";
 
 const App = () => {
   
   return (
-    <>
-      <h2>React App</h2>
-    </>
+    <Container>
+      <ContactContainer />
+    </Container>
   )
 }
 
