@@ -1,14 +1,15 @@
 
 import React from "react";
-import { Container } from 'react-bootstrap';
-import ContactContainer from "./views/ContactContainer";
+import "./assets/App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import TodoList from './components/todo/TodoList';
 
 const App = () => {
   
   return (
-    <Container>
-      <ContactContainer />
-    </Container>
+    <div className="app">
+      <TodoList />
+    </div>
   )
 }
 
