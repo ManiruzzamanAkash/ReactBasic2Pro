@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, ListGroup, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTimes, faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -45,6 +45,13 @@ const TodoList = () => {
         setTodos(newTodos);
     }
 
+    useEffect(() => {
+        //api call and set the statuses
+        fetch('https://jsonplaceholder.typicode.com/todos')
+            .then(response => response.json())
+            .then(json => setTodos(json));
+    }, []);
+
     return (
         <Card>
             <Card.Body>
@@ -61,7 +68,7 @@ const TodoList = () => {
                 <ListGroup>
                     {
                         todos.map((todo, index) => (
-                            <ListGroup.Item key={index} variant={todo.status === 'Pending' ? 'info' : 'warning'}>
+                            <ListGroup.Item key={index} variant={ ! todo.completed ? 'info' : 'warning'}>
                                 <div className="float-start">
                                     {
                                         (todoEditing === index) ? 
@@ -72,8 +79,8 @@ const TodoList = () => {
                                         />
                                         :
                                         <>
-                                            { todo.status === 'Pending' && todo.title }
-                                            { todo.status === 'Done' && <del>{todo.title }</del> }
+                                            { ! todo.completed && todo.title }
+                                            { todo.completed && <del>{todo.title }</del> }
                                         </>
                                     }
                                 </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { InputGroup, Button, FormControl } from 'react-bootstrap';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -24,8 +24,35 @@ const TodoCreate = ({ onCreateTodo }) => {
         }
     }
 
+    useEffect(() => {
+        console.log(`render everytime`);
+    });
+
+    useEffect(() => {
+        console.log(`render XX`);
+    }, [title])
+
+
+    const [count, setCount] = useState(window.innerWidth);
+
+    const calculateWindowSize = () => {
+        setCount(window.innerWidth);
+        console.log(`window.innerWidth`, window.innerWidth)
+    }
+
+
+    useEffect(() => {
+        window.addEventListener('resize', calculateWindowSize);
+  
+        return () => {
+          window.removeEventListener('resize', calculateWindowSize);
+        }
+    }, []);
+    
+
     return (
         <InputGroup className="mb-3">
+            <h2>{ count }</h2>
             <FormControl
                 placeholder=" Enter Todo"
                 aria-label=" Enter Todo"
