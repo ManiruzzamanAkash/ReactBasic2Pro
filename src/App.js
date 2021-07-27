@@ -1,14 +1,10 @@
 
 import React from "react";
-import "./assets/App.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import TodoList from './components/todo/TodoList';
-
 const App = () => {
   
   return (
     <div className="app">
-      <TodoList />
+      <h2>Welcome to React</h2>
     </div>
   )
 }
