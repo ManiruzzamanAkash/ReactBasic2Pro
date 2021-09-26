@@ -1,5 +1,6 @@
 body {
-  margin: 10% !important;
+  margin: 0px auto !important;
+  width: 50%;
 }
 
 .todo-title {
