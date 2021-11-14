@@ -26,6 +26,15 @@ const App = () => {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/products" element={<Product />} />
         <Route path="/products/:id" element={<ProductSingle />} />
+        <Route
+          path="*"
+          element={
+            <main style={{ padding: "1rem" }}>
+              <h1>404 Error</h1>
+              <p style={{ color: "red" }}>Sorry, page not found.</p>
+            </main>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
