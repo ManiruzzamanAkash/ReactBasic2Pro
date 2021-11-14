@@ -1,8 +1,11 @@
 import React from "react";
 import './assets/style.css';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
 import ContactUs from "./components/ContactUs";
 import Home from "./components/Home";
+import Product from "./components/products/Product";
+import ProductSingle from "./components/products/ProductSingle";
 
 const App = () => {
   return (
@@ -20,7 +23,9 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/contact-us" element={<ContactUs />}></Route>
+        <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/products" element={<Product />} />
+        <Route path="/products/:id" element={<ProductSingle />} />
       </Routes>
     </BrowserRouter>
   );
