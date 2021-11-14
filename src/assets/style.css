@@ -1,0 +1,22 @@
+.app {
+    text-align: center;
+}
+.navbar {
+    list-style: none;
+    background: #eee;
+    padding: 20px;
+    margin: -8px;
+}
+
+.navbar li {
+    display: inline;
+    padding: 0px;
+    margin-left: 10px;
+}
+
+.navbar li a {
+    background: #000;
+    padding: 12px 30px;
+    color: #fff;
+    text-decoration: none;
+}
