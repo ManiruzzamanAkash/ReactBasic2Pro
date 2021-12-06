@@ -1,4 +1,5 @@
 import React from 'react';
+import withLayout from '../hocs/withLayout';
 
 const Home = () => {
     return (
@@ -11,4 +12,4 @@ const Home = () => {
      );
 }
 
-export default Home;
+export default withLayout(Home);

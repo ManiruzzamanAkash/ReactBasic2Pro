@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useSearchParams } from "react-router-dom";
 import { getProductData } from '../../data/product-data';
+import withLayout from '../../hocs/withLayout';
 import ProductFilter from './ProductFilter';
 
 const Product = () => {
@@ -74,4 +75,4 @@ const Product = () => {
      );
 }
 
-export default Product;
+export default withLayout(Product);

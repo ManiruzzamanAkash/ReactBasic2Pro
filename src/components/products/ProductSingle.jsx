@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getProductData } from '../../data/product-data';
+import withLayout from '../../hocs/withLayout';
 
 const ProductSingle = () => {
     const { id } = useParams();
@@ -31,4 +32,4 @@ const ProductSingle = () => {
      );
 }
 
-export default ProductSingle;
+export default withLayout(ProductSingle);

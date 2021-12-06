@@ -1,4 +1,5 @@
 import React from 'react';
+import withLayout from '../hocs/withLayout';
 
 const ContactUs = () => {
     return (
@@ -11,4 +12,4 @@ const ContactUs = () => {
      );
 }
 
-export default ContactUs;
+export default withLayout(ContactUs);
